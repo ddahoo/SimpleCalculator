@@ -5,7 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     private enum Operator {none, add, minus, multiply, divide};
@@ -20,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void btnNumClick(View v)
     {
-        TextView eText = findViewById(R.id.resultEdit);
+        EditText eText = (EditText) findViewById(R.id.resultEdit);
 
         switch (v.getId()) {
             case R.id.btn00:
@@ -56,5 +55,29 @@ public class MainActivity extends AppCompatActivity {
             default:
                 break;
         }
+    }
+
+    public void btnOpClick(View v)
+    {
+        EditText eText = (EditText) findViewById(R.id.resultEdit);
+        data1 = Double.parseDouble(eText.getText().toString());
+        switch(v.getId())
+        {
+            case R.id.btnAdd:
+                optr = Operator.add;
+                break;
+            case R.id.btnMinus:
+                optr = Operator.minus;
+                break;
+            case R.id.btnTimes:
+                optr = Operator.multiply;
+                break;
+            case R.id.btnDivide:
+                optr = Operator.divide;
+                break;
+            default:
+                break;
+        }
+
     }
 }
