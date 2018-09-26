@@ -83,4 +83,44 @@ public class MainActivity extends AppCompatActivity {
         }
         eText.setText("");
     }
+
+    public void btnClrClick(View v)
+    {
+        EditText eText = (EditText) findViewById(R.id.resultEdit);
+        eText.setText("");
+        data1 = data2 = 0;
+        optr = Operator.none;
+    }
+
+    public void btnEqualsClick(View v)
+    {
+        EditText eText = (EditText) findViewById(R.id.resultEdit);
+        data2 = Double.parseDouble(eText.getText().toString());
+        double result = calculate();
+        eText.setText(Double.toString(result));
+    }
+
+    private double calculate() {
+        double result = 0;
+        switch (optr)
+        {
+            case add:
+                result = data1 + data2;
+                break;
+            case minus:
+                result = data1 - data2;
+                break;
+            case multiply:
+                result = data1 - data2;
+                break;
+            case divide:
+                result = data1 / data2;
+                break;
+            default:
+                break;
+        }
+
+
+        return result;
+    }
 }
