@@ -111,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
                 result = data1 - data2;
                 break;
             case multiply:
-                result = data1 - data2;
+                result = data1 * data2;
                 break;
             case divide:
                 result = data1 / data2;
