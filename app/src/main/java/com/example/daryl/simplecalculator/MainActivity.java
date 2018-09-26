@@ -52,6 +52,9 @@ public class MainActivity extends AppCompatActivity {
             case R.id.btn09:
                 eText.setText(eText.getText() + "9");
                 break;
+            case R.id.btnDot:
+                eText.setText(eText.getText() + ".");
+                break;
             default:
                 break;
         }
@@ -78,6 +81,6 @@ public class MainActivity extends AppCompatActivity {
             default:
                 break;
         }
-
+        eText.setText("");
     }
 }
